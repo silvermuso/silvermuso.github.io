@@ -1,0 +1,91 @@
+/* 털뭉치 방위대 페이지 스타일 — 게임 팔레트(하늘색·주황·나무색·크림·초록) */
+:root {
+  --sky: #5aa9e6;
+  --sky-deep: #2f6fae;
+  --orange: #f39a2b;
+  --wood: #7a4a2b;
+  --cream: #fff7e8;
+  --paper: #fffdf8;
+  --line: #ead7bb;
+  --green: #4f9d58;
+  --text: #3b2a1e;
+  --muted: #7d6a5a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+header.top {
+  background: linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
+  color: #fff;
+  padding: 28px 16px 22px;
+  text-align: center;
+}
+
+header.top h1 { margin: 0; font-size: 1.7rem; letter-spacing: 0.02em; }
+header.top p { margin: 6px 0 0; opacity: 0.9; }
+header.top img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
+
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+nav.lang {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+nav.lang a, a.button {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav.lang a:hover, a.button:hover { filter: brightness(1.06); }
+
+section.doc {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 8px 22px 22px;
+  margin: 0 0 28px;
+}
+
+h2 { color: var(--wood); font-size: 1.35rem; margin: 22px 0 8px; }
+h3 { color: var(--sky-deep); font-size: 1.08rem; margin: 22px 0 6px; }
+p, li { font-size: 0.98rem; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+
+.table-wrap { overflow-x: auto; margin: 8px 0 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+th { background: #fdf0d9; color: var(--wood); }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+ul.cards { list-style: none; padding: 0; display: grid; gap: 12px; }
+ul.cards li {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 0 16px 32px; }
+a { color: var(--sky-deep); }
