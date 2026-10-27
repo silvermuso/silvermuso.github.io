@@ -1,0 +1,20 @@
+/* 굴려라 용사 페이지 — tools/gen_site.js 가 만든다 (손으로 고치지 않는다) */
+:root{--sky:#73b0eb;--sky-deep:#3f7fc4;--bg:#fbf6ec;--fg:#2e2a26;--dim:#73695e;--card:#fff;--line:#e8dcc6;--accent:#2f6fb8;--gold:#e8a23a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1d2230;--fg:#eef1f7;--dim:#a8b0c2;--card:#283044;--line:#3d4862;--accent:#8cc0ff;--sky-deep:#2c5c94}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 system-ui,-apple-system,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+header.top{background:linear-gradient(180deg,var(--sky) 0%,var(--sky-deep) 100%);color:#fff;padding:28px 16px 22px;text-align:center}
+header.top h1{margin:6px 0 0;font-size:1.7rem} header.top p{margin:4px 0 0;opacity:.92}
+header.top img{width:96px;height:96px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+nav.crumbs{max-width:820px;margin:0 auto;padding:14px 16px 0;font-size:14px} nav.crumbs a{margin-right:14px}
+main{max-width:820px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:8px 0 4px} h2{font-size:1.2rem;margin:28px 0 8px;color:var(--accent)}
+.dim{color:var(--dim);font-size:14px}
+table{width:100%;border-collapse:collapse;background:var(--card);margin:8px 0 16px;font-size:15px}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left} th{background:rgba(115,176,235,.16)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+ul.cards{list-style:none;padding:0;display:grid;gap:12px;margin:20px 0}
+ul.cards li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+section.en{margin-top:36px;padding-top:12px;border-top:1px solid var(--line)}
+footer{text-align:center;color:var(--dim);font-size:.85rem;padding:0 16px 32px}
