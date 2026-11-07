@@ -4,8 +4,8 @@
 <body><nav class="crumbs"><a href="../">한손발할라 · One-Hand Valhalla</a><a href="../privacy/">개인정보처리방침</a><a href="../delete/">계정 삭제</a><a href="../odds/">확률 정보</a></nav>
 <main>
 <h1 id="ko">개인정보처리방침</h1>
-<p class="dim">시행일: 2026-11-05 (처음 시행 2026-11-04) · 개발자: 무쏘오 · 문의: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a></p>
-<p>무쏘오(이하 '개발자')는 모바일 게임 「한손발할라」(이전 이름: 발할라 크로니클, 이하 '게임')을 이용하는 분의 개인정보를 소중히 다룹니다. 게임은 회원가입이 없고 개발자가 직접 운영하는 서버도 없습니다. <b>로그인은 선택입니다.</b> 설정에서 구글 계정으로 로그인한 경우에만 다른 기기에서 이어 하도록 계정 정보와 게임 기록을 Google Firebase에 보관합니다.</p>
+<p class="dim">시행일: 2026-11-07 (처음 시행 2026-11-04) · 개발자: 무쏘오 · 문의: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a></p>
+<p>무쏘오(이하 '개발자')는 모바일 게임 「한손발할라」(이전 이름: 발할라 크로니클, 이하 '게임')을 이용하는 분의 개인정보를 소중히 다룹니다. 게임은 회원가입이 없고 개발자가 직접 운영하는 서버도 없습니다. <b>로그인은 선택입니다.</b> 설정에서 구글 계정으로 로그인한 경우에만 다른 기기에서 이어 하도록 계정 정보와 게임 기록을 Google Firebase에 보관합니다. 순위표에 올리는 데 동의한 경우에만 그 기록을 공개합니다(2-1절).</p>
 <h2>1. 기기에 저장되는 정보</h2>
 <ul><li>게임 진행(레벨 · 장비 · 영웅 · 정령 · 재화 · 설정)과 구매 내역(상품 ID · 구매 횟수)은 이용자의 기기 안에 저장됩니다.</li>
 <li>게임을 지우거나 설정 → 기록 삭제를 누르면 기기 안의 정보가 지워집니다.</li></ul>
@@ -15,17 +15,33 @@
 <tr><td>계정 정보: Firebase 사용자 ID, 구글 계정의 이름과 이메일 주소</td><td>Google Firebase Authentication</td><td>로그인, 계정 확인</td></tr>
 <tr><td>게임 기록: 기기 저장 내용 전체(캐릭터 이름 · 레벨 · 장비 · 진행 · 설정 · 구매 내역)와 저장 시각, 요약(이름 · 직업 · 레벨 · 클리어 수)</td><td>Google Cloud Firestore (서울 리전)</td><td>클라우드 저장, 다른 기기에서 이어 하기</td></tr>
 </tbody></table>
-<ul><li>전송 중 암호화되며, 로그인한 본인만 자기 기록을 읽고 쓸 수 있습니다.</li>
+<ul><li>전송 중 암호화되며, 클라우드 저장은 로그인한 본인만 읽고 쓸 수 있습니다.</li>
 <li>보유 기간: 계정을 삭제할 때까지. 삭제하면 바로 지워집니다(3절).</li></ul>
+<h2 id="rank">2-1. 라그나로크의 탑 주간 순위 (선택, 공개)</h2>
+<p>순위표를 보는 데는 로그인이 필요 없습니다. 기록을 올리려면 구글 로그인을 하고 게임 안에서 공개에 동의해야 합니다. 동의하면 아래 순위 기록이 <b>게임 이용자를 포함해 누구나 볼 수 있게 공개</b>됩니다.</p>
+<table><thead><tr><th>정보</th><th>보관하는 곳</th><th>목적</th></tr></thead><tbody>
+<tr><td>순위 기록: 캐릭터 이름, Firebase 사용자 ID, 영웅 종류, 도달 층 · 걸린 시간 · 시작 층, 레벨, 전투력, 장비와 스킬 구성, 올린 시각</td><td>Google Cloud Firestore (서울 리전)</td><td>주간 순위표, 비정상 기록 확인</td></tr>
+<tr><td>신고: 신고한 사람과 대상의 Firebase 사용자 ID, 대상의 이름, 영웅 종류, 주 번호, 신고 시각 (개발자만 봅니다)</td><td>Google Cloud Firestore (서울 리전)</td><td>신고 처리</td></tr>
+</tbody></table>
+<ul><li>구글 계정의 이름과 이메일 주소는 공개되지 않습니다. 순위에 보이는 이름은 게임에서 정한 캐릭터 이름입니다.</li>
+<li>순위표를 볼 때 기기가 Google 서버에 직접 요청하므로 IP 주소 같은 접속 정보가 Google에 전달될 수 있습니다. 개발자는 이 정보를 받지 않습니다.</li>
+<li>보유 기간: 순위 기록은 이용자가 내리거나 계정을 삭제할 때까지, 신고는 처리가 끝날 때까지 보관합니다.</li>
+<li>내리기: 순위표에서 내 줄을 누르고 <mark>기록 내리기</mark>를 누르면 올린 기록이 지워지고 공개 동의가 취소됩니다.</li></ul>
+<h3>순위표 이용 규칙</h3>
+<ul><li>금지: 욕설 · 비하 · 혐오 · 음란 · 폭력을 부추기는 이름, 다른 사람이나 개발자를 사칭하는 이름, 광고나 불법 정보가 담긴 이름, 기록 조작과 비정상적인 프로그램 사용.</li>
+<li>조치: 규칙을 어긴 이름과 기록을 지우고 순위 참여를 막을 수 있습니다.</li>
+<li>신고: 순위표에서 그 사람의 줄을 누르고 <mark>신고</mark>를 누르면 개발자에게 전달되고 내 목록에서 바로 숨겨집니다. <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a>으로도 받습니다.</li></ul>
+<h2 id="appcheck">2-2. 정상 앱 확인 (Firebase App Check · Google Play Integrity)</h2>
+<p>클라우드 저장과 주간 순위 요청이 Google Play에서 받은 정상 앱에서 왔는지 확인하려고 Firebase App Check와 Google Play Integrity API를 씁니다. 확인할 때 앱 정보(패키지 이름 · 버전 · 서명 인증서), Google Play 라이선스 상태, 기기 증명 정보가 Google로 보내집니다. Google LLC가 처리하며 개발자는 이 자료를 받지 않습니다. 앱과 기기가 정상인지 확인하는 데만 쓰고, App Check는 증명 자료를 보관하지 않으며 Play Integrity의 자료는 정해진 기간이 지나면 지워집니다. 게임은 이 기능으로 이용자나 기기를 추적하지 않습니다.</p>
 <h2 id="delete">3. 계정 · 클라우드 기록 삭제</h2>
-<ul><li><b>게임 안에서:</b> 설정 → <mark>계정 삭제</mark>를 누르면 클라우드에 보관된 게임 기록과 로그인 계정이 바로 지워집니다. 기기 안의 기록은 남습니다.</li>
+<ul><li><b>게임 안에서:</b> 설정 → <mark>계정 삭제</mark>를 누르면 클라우드에 보관된 게임 기록, 순위 기록과 로그인 계정이 바로 지워집니다. 기기 안의 기록은 남습니다.</li>
 <li><b>게임을 쓸 수 없을 때:</b> <a href="mailto:silvermuso@gmail.com?subject=%ED%95%9C%EC%86%90%EB%B0%9C%ED%95%A0%EB%9D%BC%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C">silvermuso@gmail.com</a>으로 "한손발할라 계정 삭제"와 로그인한 구글 계정 이메일을 적어 보내 주세요. 확인 후 지체 없이 지웁니다. 자세한 안내: <a href="../delete/">계정 삭제 페이지</a></li></ul>
 <h2>4. 광고 (Google AdMob)</h2>
 <p>게임은 이용자가 직접 고른 경우에만 보상형 광고를 보여 줍니다. 강제로 나오는 광고는 없습니다. 광고를 위해 Google AdMob이 광고 ID · 앱 세트 ID 같은 기기 식별자, 기기 · 앱 정보, IP 주소로 추정한 대략적 위치, 광고와의 상호작용, 오류 · 진단 정보를 수집 · 처리할 수 있습니다. 자세한 내용은 <a href="https://policies.google.com/technologies/partner-sites?hl=ko">Google이 파트너 앱의 정보를 사용하는 방법</a>과 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>을 참고하세요. 기기의 설정 → Google → 광고에서 광고 ID를 재설정하거나 삭제할 수 있습니다. 유럽 경제 지역 · 영국 · 스위스 등 법이 요구하는 지역에서는 처음 실행할 때 Google의 동의 화면이 나옵니다.</p>
 <h2>5. 결제 (Google Play 결제)</h2>
 <p>게임 안 상품의 결제는 Google Play가 처리합니다. 개발자는 카드 번호 같은 결제 정보를 받지 않으며, 구매가 끝났다는 확인(상품 ID · 구매 토큰)만 기기 안에서 받아 상품을 지급하고, 다시 설치했을 때 한 번만 사는 상품을 되살리는 데 씁니다.</p>
 <h2>6. 앱 권한</h2>
-<ul><li>인터넷 · 네트워크 상태: 광고 불러오기, Google Play 결제, (로그인한 경우) 로그인과 클라우드 저장</li>
+<ul><li>인터넷 · 네트워크 상태: 광고 불러오기, Google Play 결제, 순위표 보기, (로그인한 경우) 로그인 · 클라우드 저장 · 순위 올리기</li>
 <li>광고 ID: Google 광고 SDK</li>
 <li>결제(com.android.vending.BILLING): Google Play 결제</li>
 <li>진동: 전투 중 타격 진동 (설정에서 끌 수 있음)</li>
@@ -34,21 +50,24 @@
 <li>Google 서비스 설정 읽기(READ_GSERVICES): Google Play 서비스(로그인 · 클라우드 저장)가 기기의 Google 서비스 설정을 확인</li></ul>
 <p>사진 · 연락처 · 위치 · 마이크 · 카메라 권한은 쓰지 않습니다.</p>
 <h2>7. 제3자 제공 · 처리 위탁 · 국외 이전</h2>
-<p>개발자는 개인정보를 제3자에게 제공하지 않습니다. 게임에 들어 있는 Google SDK가 2 · 4 · 5절의 정보를 로그인 · 클라우드 저장, 광고, 결제 처리를 위해 Google LLC(미국)로 보냅니다(전송 중 암호화). 클라우드 저장은 Cloud Firestore 서울 리전에 보관합니다. 로그인 정보와 클라우드 기록은 3절처럼 지울 수 있고, 그 밖의 정보의 보유 기간은 Google 개인정보처리방침을 따릅니다. (<a href="https://firebase.google.com/support/privacy">Firebase 개인정보 보호</a>)</p>
+<p>개발자는 개인정보를 제3자에게 제공하지 않습니다. 다만 이용자가 동의해 순위표에 올린 기록은 2-1절처럼 공개됩니다. 게임에 들어 있는 Google SDK가 2 · 2-2 · 4 · 5절의 정보를 로그인 · 클라우드 저장, 정상 앱 확인, 광고, 결제 처리를 위해 Google LLC(미국)로 보냅니다(전송 중 암호화). 클라우드 저장은 Cloud Firestore 서울 리전에 보관합니다. 로그인 정보와 클라우드 기록은 3절처럼 지울 수 있고, 그 밖의 정보의 보유 기간은 Google 개인정보처리방침을 따릅니다. (<a href="https://firebase.google.com/support/privacy">Firebase 개인정보 보호</a>)</p>
 <h2>8. 아동</h2>
 <p>게임은 만 13세 미만 아동을 대상으로 하지 않으며, 만 13세 미만 아동의 개인정보를 알면서 수집하지 않습니다.</p>
 <h2>9. 이용자의 권리</h2>
-<p>로그인한 경우 게임의 설정에서 계정을 확인하고 3절의 방법으로 클라우드 기록과 계정을 지울 수 있습니다. 기기 안의 정보는 게임을 지우거나 기록 삭제로 지울 수 있고, Google이 처리하는 정보는 기기 설정(광고 ID)과 Google 계정(<a href="https://myaccount.google.com">myaccount.google.com</a>)에서 확인 · 관리할 수 있습니다. 그 밖의 문의는 아래 연락처로 보내 주세요.</p>
+<p>로그인한 경우 게임의 설정에서 계정을 확인하고 3절의 방법으로 클라우드 기록과 계정을 지울 수 있고, 순위 기록은 2-1절의 방법으로도 내릴 수 있습니다. 기기 안의 정보는 게임을 지우거나 기록 삭제로 지울 수 있고, Google이 처리하는 정보는 기기 설정(광고 ID)과 Google 계정(<a href="https://myaccount.google.com">myaccount.google.com</a>)에서 확인 · 관리할 수 있습니다. 그 밖의 문의는 아래 연락처로 보내 주세요.</p>
 <h2>10. 개인정보 보호책임자 · 변경</h2>
 <p>이름: 무쏘오 · 연락처: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a>. 개인정보 침해 상담은 개인정보침해신고센터(<a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a>, 국번 없이 118)에도 할 수 있습니다. 이 방침이 바뀌면 이 페이지에 시행일과 함께 알립니다.</p>
 <section class="en" id="en" lang="en"><h2>Privacy policy (English)</h2>
-<p class="dim">Effective 2026-11-05 (first effective 2026-11-04) · Developer: 무쏘오 · Contact: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a></p>
+<p class="dim">Effective 2026-11-07 (first effective 2026-11-04) · Developer: 무쏘오 · Contact: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a></p>
 <p>One-Hand Valhalla (한손발할라, formerly Valhalla Chronicle) has no sign-up and no developer server. Game progress and purchase records (product ID, purchase count) are stored on your device and are deleted when you uninstall the game or use Settings → Delete records.</p>
-<p><b>Google sign-in and cloud save (optional, Google Firebase).</b> Only if you choose "Google login" in Settings, your Firebase user ID and Google account name and email (Firebase Authentication) and your full game save with its save time and a summary (name, class, level, clears) (Cloud Firestore, Seoul region) are stored so you can continue on another device. Data is encrypted in transit and only you can read or write your own save. It is kept until you delete your account. <b>To delete it</b>, tap Settings → Delete account in the game; your cloud save and account are deleted immediately (data on the device stays). If you can't use the game, email <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a> with "One-Hand Valhalla account deletion" and your Google account email — see the <a href="../delete/#en">account deletion page</a>.</p>
+<p><b>Google sign-in and cloud save (optional, Google Firebase).</b> Only if you choose "Google login" in Settings, your Firebase user ID and Google account name and email (Firebase Authentication) and your full game save with its save time and a summary (name, class, level, clears) (Cloud Firestore, Seoul region) are stored so you can continue on another device. Data is encrypted in transit and only you can read or write your own save. It is kept until you delete your account. <b>To delete it</b>, tap Settings → Delete account in the game; your cloud save, ranking records and account are deleted immediately (data on the device stays). If you can't use the game, email <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a> with "One-Hand Valhalla account deletion" and your Google account email — see the <a href="../delete/#en">account deletion page</a>.</p>
+<p id="rank-en"><b>Weekly tower ranking (optional, public).</b> Viewing the ranking needs no sign-in; the device requests it directly from Google servers, so connection information such as your IP address may reach Google (the developer does not receive it). To post a record you must sign in with Google and agree in the game. Your ranking record is then <b>public to anyone</b>: character name, Firebase user ID, hero type, floor reached, time, starting floor, level, power, gear and skills, and post time (Cloud Firestore, Seoul region). Your Google account name and email are not shown. It is kept until you remove it (tap your row in the ranking → 기록 내리기) or delete your account. Reports (reporter and target Firebase user IDs, target name, hero type, week, time) are visible only to the developer and kept until handled.</p>
+<p><b>Ranking rules.</b> Not allowed: names that are abusive, hateful, sexual, encourage violence, impersonate others or the developer, or contain ads or illegal content; tampered records or abnormal programs. Violating names and records may be removed and the player may be barred from the ranking. To report, tap a player's row → 신고 (the player is hidden from your list at once), or email <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a>.</p>
+<p id="appcheck-en"><b>App integrity check (Firebase App Check, Google Play Integrity).</b> To confirm that cloud save and weekly ranking requests come from a genuine copy of the app installed from Google Play, the game uses Firebase App Check and the Google Play Integrity API. The check sends app information (package name, version, signing certificate), Google Play license status and device attestation information to Google. It is processed by Google LLC and the developer does not receive this material. It is used only to verify the app and device. App Check does not retain the attestation material, and Play Integrity data is deleted after a fixed retention period. The game does not use this to track you or your device.</p>
 <p><b>Ads (Google AdMob).</b> Rewarded ads are shown only when you choose to watch one. Google AdMob may collect and process device identifiers (advertising ID, app set ID), device and app information, approximate location derived from your IP address, ad interactions and diagnostics — see <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from partner apps</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can reset or delete your advertising ID in your device's Google settings. Where required by law (EEA, UK, Switzerland) Google's consent screen is shown on first launch.</p>
 <p><b>Payments (Google Play Billing).</b> In-app purchases are processed by Google Play. The developer never receives card details; the game only receives the product ID and purchase token on the device to deliver the item and restore one-time purchases after reinstalling.</p>
-<p><b>Permissions.</b> Internet and network state (ads, billing, sign-in and cloud save), advertising ID (Google ads SDK), billing, vibration (can be turned off in settings), basic phone state (network type only, used by Google SDKs — never your phone number or call log), wake lock and foreground service (Google SDK internals), Google services settings (Google Play services for sign-in). No photos, contacts, location, microphone or camera.</p>
-<p>No personal information is sold or shared with third parties; the Google SDKs above send the listed data to Google LLC (USA), encrypted in transit, for sign-in and cloud save, ads and billing. The game is not directed at children under 13 and does not knowingly collect their personal information. Questions: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a>. Changes to this policy will be posted on this page with a new effective date.</p>
+<p><b>Permissions.</b> Internet and network state (ads, billing, viewing the ranking, sign-in, cloud save and posting to the ranking), advertising ID (Google ads SDK), billing, vibration (can be turned off in settings), basic phone state (network type only, used by Google SDKs — never your phone number or call log), wake lock and foreground service (Google SDK internals), Google services settings (Google Play services for sign-in). No photos, contacts, location, microphone or camera.</p>
+<p>No personal information is sold or shared with third parties, except that ranking records you agree to post are public as described above; the Google SDKs above send the listed data to Google LLC (USA), encrypted in transit, for sign-in and cloud save, ads and billing. The game is not directed at children under 13 and does not knowingly collect their personal information. Questions: <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a>. Changes to this policy will be posted on this page with a new effective date.</p>
 </section></main>
 <footer>© 2026 무쏘오 · <a href="mailto:silvermuso@gmail.com">silvermuso@gmail.com</a></footer>
 </body></html>
